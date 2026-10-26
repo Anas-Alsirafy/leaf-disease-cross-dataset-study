@@ -1,0 +1,117 @@
+section,experiment,description,dataset,protocol,metric,value,sd,unit,notes
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,93.64,0.9,%,sd of 3 seed means
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,79.24,3.01,%,
+A_vs_B,B - A,Paired difference,Rice (UCI),Corrected resampled t-test,accuracy_difference,-14.4,,points,95% CI -28.2 to -0.6; p 0.042
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.89,0.02,%,sd of 3 seed means
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.87,0.03,%,
+A_vs_B,B - A,Paired difference,Apple (PlantVillage),Corrected resampled t-test,accuracy_difference,-0.02,,points,95% CI -0.22 to 0.18; p 0.83
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,98.86,0.03,%,sd of 3 seed means
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Tomato (PlantVillage),"StratifiedGroupKFold 5 folds, seed 17 only",accuracy,99.64,,%,One seed
+A_vs_B,B - A,Paired difference,Tomato (PlantVillage),Corrected resampled t-test,accuracy_difference,0.82,,points,95% CI 0.26 to 1.38; p 0.015
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,70.61,0.16,%,sd of 3 seed means
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Cassava (Kaggle 2020),"StratifiedGroupKFold 5 folds, seed 17 only",accuracy,86.32,,%,One seed
+A_vs_B,B - A,Paired difference,Cassava (Kaggle 2020),Corrected resampled t-test,accuracy_difference,15.7,,points,95% CI 14.5 to 17.0; p < 1e-5
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",PlantDoc,StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,59.5,0.52,%,sd of 3 seed means
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",PlantDoc,StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,76.16,0.31,%,
+A_vs_B,B - A,Paired difference,PlantDoc,Corrected resampled t-test,accuracy_difference,16.7,,points,95% CI 15.2 to 18.1; p < 1e-12
+A_vs_B,B frozen,ConvNeXt-Base kept frozen in all phases,Cassava (Kaggle 2020),"StratifiedGroupKFold 5 folds, seed 17 only",accuracy,81.88,,%,"B frozen - A = +11.3 (9.7 to 12.9), p < 1e-4"
+A_vs_B,B frozen,ConvNeXt-Base kept frozen in all phases,PlantDoc,"StratifiedGroupKFold 5 folds, seed 17 only",accuracy,71.9,,%,"B frozen - A = +12.8 (10.0 to 15.7), p < 1e-3"
+A_vs_B,B - B frozen,Gain from fine-tuning alone,Cassava (Kaggle 2020),Corrected resampled t-test,accuracy_difference,4.4,,points,95% CI 2.1 to 6.7; p = 0.006
+A_vs_B,B - B frozen,Gain from fine-tuning alone,PlantDoc,Corrected resampled t-test,accuracy_difference,4.4,,points,95% CI 4.0 to 4.8; p < 1e-5
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,balanced_accuracy,53.6,,%,
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Cassava (Kaggle 2020),"StratifiedGroupKFold 5 folds, seed 17 only",balanced_accuracy,76.7,,%,
+A_vs_B,Pipeline A,"Pipeline A: frozen MobileNetV2+EfficientNet-B0+DenseNet121, logistic regression",Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,macro_f1,0.534,,score,
+A_vs_B,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Cassava (Kaggle 2020),"StratifiedGroupKFold 5 folds, seed 17 only",macro_f1,0.762,,score,
+cost,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Rice (UCI),-,train_time_per_fold,3,,min,
+cost,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Apple (PlantVillage),-,train_time_per_fold,34,,min,
+cost,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",PlantDoc,-,train_time_per_fold,33,,min,
+cost,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Tomato (PlantVillage),-,train_time_per_fold,246,,min,
+cost,Pipeline B,"Pipeline B: ConvNeXt-Base fine-tuned, 3 phases, 384x384, CLAHE",Cassava (Kaggle 2020),-,train_time_per_fold,262,,min,
+cost,Pipeline B,All runs,All five,-,total_gpu_time,59.9,,h,One seed on tomato and cassava
+cost,Pipeline A,"Heads, all 75 folds",All five,-,total_fit_time,38,,min,
+cost,Pipeline A,"Feature extraction, 45,418 images, 3 backbones",All five,-,extraction_time,363,,s,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,93.64,,%,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,1.3,,s,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.89,,%,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,2.0,,s,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,98.86,,%,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,40.8,,s,
+pipeline_A_heads,Soft-voting ensemble,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,91.72,,%,
+pipeline_A_heads,Soft-voting ensemble,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,1428,,s,
+pipeline_A_heads,Soft-voting ensemble,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.64,,%,
+pipeline_A_heads,Soft-voting ensemble,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,7066,,s,
+pipeline_A_heads,Soft-voting ensemble,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,98.61,,%,
+pipeline_A_heads,Soft-voting ensemble,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,1246,,s,
+pipeline_A_heads,SVM,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,89.46,,%,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,SVM,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,3.9,,s,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,SVM,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.71,,%,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,SVM,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,31.8,,s,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,SVM,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,98.44,,%,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,SVM,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,322,,s,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,Boosting,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,91.18,,%,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,Boosting,Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,1424,,s,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,Boosting,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.12,,%,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,Boosting,Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,7028,,s,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,Boosting,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,97.6,,%,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,Boosting,Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,1154,,s,"Tomato uses linear SVM / histogram boosting (>4,000 rows)"
+pipeline_A_heads,"k-NN (k=5, cosine)",Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,89.67,,%,
+pipeline_A_heads,"k-NN (k=5, cosine)",Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,<0.1,,s,
+pipeline_A_heads,"k-NN (k=5, cosine)",Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,99.27,,%,
+pipeline_A_heads,"k-NN (k=5, cosine)",Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,<0.1,,s,
+pipeline_A_heads,"k-NN (k=5, cosine)",Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,96.37,,%,
+pipeline_A_heads,"k-NN (k=5, cosine)",Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,<0.1,,s,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,89.2,,%,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,1.4,,s,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,98.42,,%,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,5.2,,s,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,92.69,,%,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,40.3,,s,
+pipeline_A_heads,"Logistic regression, MobileNetV2 only",Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,92.24,,%,
+pipeline_A_heads,"Logistic regression, MobileNetV2 only",Pipeline A head on frozen features,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,0.2,,s,
+pipeline_A_heads,"Logistic regression, MobileNetV2 only",Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,98.61,,%,
+pipeline_A_heads,"Logistic regression, MobileNetV2 only",Pipeline A head on frozen features,Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,0.5,,s,
+pipeline_A_heads,"Logistic regression, MobileNetV2 only",Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,92.0,,%,
+pipeline_A_heads,"Logistic regression, MobileNetV2 only",Pipeline A head on frozen features,Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,24.3,,s,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,70.61,,%,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,78,,s,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,70.2,,%,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,PlantDoc,StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,59.5,,%,
+pipeline_A_heads,Logistic regression,Pipeline A head on frozen features,PlantDoc,StratifiedGroupKFold 5 folds x seeds 17/42/1337,fit_time_per_fold,31,,s,
+pipeline_A_heads,Random forest (500 trees),Pipeline A head on frozen features,PlantDoc,StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,50.74,,%,
+pipeline_A_heads,Extra backbones,"3 backbones vs MobileNetV2 only, logistic regression",Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy_gain,1.4,,points,
+pipeline_A_heads,Extra backbones,"3 backbones vs MobileNetV2 only, logistic regression",Apple (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy_gain,1.28,,points,
+pipeline_A_heads,Extra backbones,"3 backbones vs MobileNetV2 only, logistic regression",Tomato (PlantVillage),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy_gain,6.86,,points,
+pipeline_A_heads,Extra backbones,"3 backbones vs MobileNetV2 only, logistic regression",Cassava (Kaggle 2020),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy_gain,0.72,,points,
+pipeline_A_heads,Extra backbones,"3 backbones vs MobileNetV2 only, logistic regression",PlantDoc,StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy_gain,9.16,,points,
+leakage_check,Augment-then-split,"Augment 120 images to 960, then split; 3-backbone logistic regression",Rice (UCI),Held-out split after augmentation,accuracy,100.0,,%,Leaky
+leakage_check,Protocol,Same model under the grouped protocol,Rice (UCI),StratifiedGroupKFold 5 folds x seeds 17/42/1337,accuracy,93.64,0.9,%,Wilson 95% CI 87.8-96.8; single folds 84-100
+tomato_ablation_preliminary,Frozen MobileNetV2 + dense head,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",accuracy,89.63,,%,Not leakage-controlled
+tomato_ablation_preliminary,Frozen MobileNetV2 + dense head,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",train_time,77,,s,Not leakage-controlled
+tomato_ablation_preliminary,+ Gaussian blur,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",accuracy,90.63,,%,Not leakage-controlled
+tomato_ablation_preliminary,+ Gaussian blur,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",train_time,66,,s,Not leakage-controlled
+tomato_ablation_preliminary,+ CLAHE,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",accuracy,89.43,,%,Not leakage-controlled
+tomato_ablation_preliminary,+ CLAHE,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",train_time,65,,s,Not leakage-controlled
+tomato_ablation_preliminary,+ standard augmentation,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",accuracy,83.51,,%,Not leakage-controlled
+tomato_ablation_preliminary,+ standard augmentation,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",train_time,1141,,s,Not leakage-controlled
+tomato_ablation_preliminary,+ domain-aware augmentation (replaces standard),"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",accuracy,81.93,,%,Not leakage-controlled
+tomato_ablation_preliminary,+ domain-aware augmentation (replaces standard),"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",train_time,373,,s,Not leakage-controlled
+tomato_ablation_preliminary,+ two-phase fine-tuning,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",accuracy,85.55,,%,Not leakage-controlled
+tomato_ablation_preliminary,+ two-phase fine-tuning,"Cumulative condition, MobileNetV2","Tomato (Kaggle PlantVillage, 16,011 images)","One stratified split, seed 42, 2,402 test images",train_time,7286,,s,Not leakage-controlled
+published,Prajapati,Handcrafted + SVM,Rice (UCI),hold-out / 5-fold CV,accuracy,73.3 / 83.8,,%,As reported; Paper 2 Table IV
+published,Azim,Handcrafted + XGBoost,Rice (UCI),80/20 hold-out,accuracy,86.6,,%,As reported; Paper 2 Table IV
+published,Acharya,Handcrafted + LS-SVM,Rice (UCI),80/20 hold-out,accuracy,91.3,,%,As reported; Paper 2 Table IV
+published,Rathore,CNN from scratch,Rice (UCI),"aug. to 420, order not stated",accuracy,94.4,,%,As reported; Paper 2 Table IV
+published,Matin,AlexNet fine-tuned,Rice (UCI),"aug. to 900, then 70/30",accuracy,99.4,,%,As reported; Paper 2 Table IV; augmented before split
+published,Al-bayati,SURF + DNN,Apple (PlantVillage),random split,accuracy,98.3,,%,As reported; Paper 2 Table IV
+published,Ashmafee (preprint),Frozen EffNetV2-S + MLP,Apple (PlantVillage),60/20/20,accuracy,99.2,,%,As reported; Paper 2 Table IV
+published,Francis,MobileNet-0.5 retrained,Apple (PlantVillage),90/10,accuracy,99.6,,%,As reported; Paper 2 Table IV
+published,Maeda-Gutierrez,Inception V3 fine-tuned,Tomato (PlantVillage),80/20,accuracy,98.7,,%,As reported; Paper 2 Table IV
+published,Maeda-Gutierrez,GoogLeNet fine-tuned,Tomato (PlantVillage),80/20,accuracy,99.4,,%,As reported; Paper 2 Table IV
+published,Shoaib,InceptionNet variants,Tomato (PlantVillage),split not stated,accuracy,99.6-99.9,,%,As reported; Paper 2 Table IV
+published,Riaz,EfficientNet-B3,Cassava (Kaggle 2020),own test split,accuracy,83.0,,%,As reported; Paper 2 Table IV
+published,Fang,ConvNeXt-T fine-tuned,Cassava (Kaggle 2020),80/20,accuracy,88.9,,%,As reported; Paper 2 Table IV
+published,Fang,VGG-13 BN fine-tuned,Cassava (Kaggle 2020),80/20,accuracy,89.0,,%,As reported; Paper 2 Table IV
+published,Kaggle 1st place,Ensemble,Cassava (Kaggle 2020),hidden test set,accuracy,91.3,,%,As reported; Paper 2 Table IV
+published,Singh,"InceptionResNetV2, PV-pretrained",PlantDoc,"cropped, 80/20",accuracy,70.5,,%,As reported; Paper 2 Table IV
+published,El Karch,Frozen DINOv2-L + CLIP-L,PlantDoc,"official split, 5 seeds",accuracy,77.0,,%,As reported; Paper 2 Table IV
+published,Yu,Swin + conv. interaction,PlantDoc,split not stated,accuracy,77.5,,%,As reported; Paper 2 Table IV
