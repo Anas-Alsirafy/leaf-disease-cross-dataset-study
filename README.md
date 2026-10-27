@@ -119,6 +119,10 @@ These pieces of Paper 2 are not in this repository. Get them from the Pipeline A
 - [cassava-leaf-disease-classification](https://github.com/Anas-Alsirafy/cassava-leaf-disease-classification) — where Pipeline B's training recipe was developed
 - [maize-multilabel-foliar-disease](https://github.com/Anas-Alsirafy/maize-multilabel-foliar-disease) — multi-label maize (cereal) work
 
+## Documentation
+
+Full handover documentation (guide, environment setup, data, configs, experiments, results, known issues, future work) is in [`docs/`](docs/README.md), as Markdown and PDF.
+
 ## Contact
 
 Anas Alsirafy, American University in Cairo (anas.samy@aucegypt.edu). Supervisor: Prof. Maki K. Habib. Co-author: Kamal Mohamed (kamal_mohamed@aucegypt.edu).
